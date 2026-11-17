@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#382820">
+<title>Mellara Essence | Perfumaria e Beleza</title>
+<meta name="description" content="Mellara Essence: perfumaria, beleza e sofisticação.">
+
+<style>
+:root{
+  --brown:#382820;
+  --gold:#bd9a65;
+  --cream:#f8f4ee;
+  --white:#fff;
+  --text:#332820;
+  --muted:#81766d;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;background:var(--cream);color:var(--text)}
+header{background:var(--brown);color:white;padding:16px 5%}
+.top{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.logo{font-family:Georgia,serif;color:var(--gold);font-size:27px;font-weight:bold}
+.logo small{display:block;color:white;font:10px Arial;letter-spacing:3px;text-align:center;margin-top:5px}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a,footer a{color:white;text-decoration:none;font-size:13px}
+nav a:hover,footer a:hover{color:var(--gold)}
+.hero{
+ min-height:390px;display:flex;align-items:center;justify-content:center;
+ text-align:center;padding:45px 20px;color:white;
+ background:linear-gradient(#21160dbb,#21160d99),
+ url("https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1600&q=85") center/cover;
+}
+.hero-content{max-width:720px}
+.hero h1{font:clamp(36px,6vw,60px) Georgia,serif;color:#e4c28c;margin:0 0 15px}
+.hero p{font-size:17px;line-height:1.7}
+.hero a,.button-link{display:inline-block;margin-top:20px;background:var(--gold);color:#281c15;padding:14px 25px;text-decoration:none;border-radius:4px;font-weight:bold}
+.container{max-width:1200px;margin:45px auto;padding:0 18px}
+.section-title{text-align:center;font:32px Georgia,serif;color:var(--brown);margin-bottom:10px}
+.subtitle{text-align:center;color:var(--muted);margin-bottom:28px}
+.tools{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:25px}
+.tools input,.tools select{padding:13px;border:1px solid #ddd0c1;border-radius:5px;background:white;font-size:14px}
+.tools input{flex:1;min-width:180px}
+.tools select{min-width:160px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+.product{background:white;border-radius:9px;overflow:hidden;box-shadow:0 4px 15px #38282012;display:flex;flex-direction:column}
+.product img{width:100%;height:245px;object-fit:contain;background:#fff;padding:12px}
+.product-info{padding:17px;display:flex;flex-direction:column;flex:1}
+.product-category{color:#a17b49;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.product h3{font:19px Georgia,serif;margin:0 0 9px}
+.product p{color:var(--muted);font-size:13px;line-height:1.5;margin:0 0 12px}
+.price{color:var(--brown);font-weight:bold;font-size:20px;margin:5px 0 15px}
+.product button,.buy-link{display:block;width:100%;border:0;border-radius:4px;padding:12px;background:var(--brown);color:white;text-align:center;text-decoration:none;font-weight:bold;cursor:pointer;margin-top:9px}
+.product button:hover,.buy-link:hover{background:#634633}
+.buy-link{background:#a17b49}
+.empty{text-align:center;padding:35px;color:var(--muted);grid-column:1/-1}
+.benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;text-align:center}
+.benefit{background:white;padding:25px 15px;border-radius:8px;line-height:1.5}
+.benefit strong{display:block;color:var(--brown);margin-bottom:8px}
+.promo{display:none;background:#eadcc8;padding:17px;text-align:center;margin-bottom:25px;border-radius:6px}
+footer{background:var(--brown);color:white;padding:35px 18px;text-align:center;line-height:2}
+.footer-logo{color:var(--gold);font:25px Georgia,serif}
+footer a{color:var(--gold)}
+.admin-link{display:inline-block;margin-top:12px;color:#d9c4a4;font-size:12px}
+.cart-box{position:fixed;right:15px;bottom:15px;z-index:5}
+.cart-button{border:0;border-radius:30px;background:var(--gold);color:#281c15;padding:14px 19px;font-weight:bold;cursor:pointer;box-shadow:0 3px 12px #0003}
+.cart-panel{display:none;position:fixed;z-index:10;right:15px;bottom:75px;width:min(360px,calc(100% - 30px));max-height:70vh;overflow:auto;background:white;border-radius:9px;padding:18px;box-shadow:0 5px 25px #0003}
+.cart-panel h3{margin-top:0}
+.cart-item{border-bottom:1px solid #eee;padding:10px 0;font-size:14px}
+.cart-item button{margin-left:8px;color:#a33;border:0;background:none;cursor:pointer}
+.checkout{display:block;margin-top:15px;width:100%;padding:13px;background:#286b43;color:white;border:0;border-radius:5px;font-weight:bold;cursor:pointer}
+@media(max-width:600px){
+ .top{justify-content:center}
+ nav{justify-content:center}
+ .hero{min-height:330px}
+ .section-title{font-size:27px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <div class="top">
+  <div class="logo">Mellara Essence<small>PERFUMARIA E BELEZA</small></div>
+  <nav>
+   <a href="#inicio">Início</a>
+   <a href="#produtos">Produtos</a>
+   <a href="#sobre">Sobre nós</a>
+   <a href="#contato">Contato</a>
+  </nav>
+ </div>
+</header>
+
+<section class="hero" id="inicio">
+ <div class="hero-content">
+  <h1>Seu perfume. Sua essência.</h1>
+  <p>Descubra fragrâncias especiais e produtos de beleza escolhidos para valorizar sua personalidade.</p>
+  <a href="#produtos">CONHEÇA NOSSA COLEÇÃO</a>
+ </div>
+</section>
+
+<main>
+ <section class="container" id="produtos">
+  <h2 class="section-title">Nossa coleção</h2>
+  <p class="subtitle">Elegância e sofisticação em cada detalhe.</p>
+
+  <div class="promo" id="promo"></div>
+
+  <div class="tools">
+   <input type="search" id="busca" placeholder="Buscar produto..." aria-label="Buscar produto">
+   <select id="categoria" aria-label="Filtrar categoria">
+    <option value="">Todas as categorias</option>
+    <option value="Perfumes">Perfumes</option>
+    <option value="Beleza">Beleza</option>
+    <option value="Cuidados pessoais">Cuidados pessoais</option>
+   </select>
+  </div>
+
+  <div class="grid" id="listaProdutos"></div>
+ </section>
+
+ <section class="container" id="sobre">
+  <h2 class="section-title">A experiência Mellara</h2>
+  <p class="subtitle">Mais do que produtos, uma experiência de beleza e cuidado.</p>
+  <div class="benefits">
+   <div class="benefit"><strong>✦ Elegância</strong>Produtos selecionados com carinho.</div>
+   <div class="benefit"><strong>✦ Atendimento</strong>Tire suas dúvidas pelo WhatsApp.</div>
+   <div class="benefit"><strong>✦ Sofisticação</strong>Encontre sua próxima fragrância.</div>
+  </div>
+ </section>
+</main>
+
+<footer id="contato">
+ <div class="footer-logo">Mellara Essence</div>
+ <p>Perfumaria e Beleza</p>
+ <p>WhatsApp: <a href="https://wa.me/556993719212" target="_blank" rel="noopener">Fale conosco</a></p>
+ <p>Instagram: <a href="https://www.instagram.com/mellara.essence/" target="_blank" rel="noopener">@mellara.essence</a></p>
+ <a class="admin-link" href="admin.html">Acesso administrativo</a>
+ <p>© 2026 Mellara Essence. Todos os direitos reservados.</p>
+</footer>
+
+<div class="cart-box">
+ <button class="cart-button" onclick="abrirCarrinho()">🛍 Sacola (<span id="cartCount">0</span>)</button>
+</div>
+
+<div class="cart-panel" id="cartPanel">
+ <h3>Minha sacola</h3>
+ <div id="cartItems"></div>
+ <p><strong>Total: R$ <span id="cartTotal">0,00</span></strong></p>
+ <button class="checkout" onclick="finalizarCompra()">Finalizar pelo WhatsApp</button>
+</div>
+
+<script>
+const CHAVE_PRODUTOS="mellaraProdutos";
+const CHAVE_CARRINHO="mellaraCarrinho";
+const WHATSAPP="556993719212";
+
+const produtosIniciais=[
+ {id:"lily-elixir",nome:"Lily L'Or Elixir Eau de Parfum, 75 ml",descricao:"Uma fragrância sofisticada e marcante.",categoria:"Perfumes",preco:359.90,imagem:"",link:"",ativo:true,estoque:10},
+ {id:"glamour-secrets",nome:"Glamour Secrets Black O Boticário, 75 ml",descricao:"Uma fragrância envolvente para momentos especiais.",categoria:"Perfumes",preco:0,imagem:"",link:"",ativo:true,estoque:10}
+];
+
+function carregarProdutos(){
+ try{
+  const dados=JSON.parse(localStorage.getItem(CHAVE_PRODUTOS));
+  if(Array.isArray(dados))return dados;
+ }catch(e){}
+ localStorage.setItem(CHAVE_PRODUTOS,JSON.stringify(produtosIniciais));
+ return produtosIniciais;
+}
+function carregarCarrinho(){
+ try{
+  const dados=JSON.parse(localStorage.getItem(CHAVE_CARRINHO));
+  return Array.isArray(dados)?dados:[];
+ }catch(e){return []}
+}
+let produtos=carregarProdutos();
+let carrinho=carregarCarrinho();
+
+function escapar(v){
+ return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function moeda(v){
+ return Number(v||0).toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
+}
+function renderizarProdutos(){
+ produtos=carregarProdutos();
+ const busca=document.getElementById("busca").value.toLowerCase();
+ const categoria=document.getElementById("categoria").value;
+ const lista=document.getElementById("listaProdutos");
+ const filtrados=produtos.filter(p=>
+  p.ativo!==false &&
+  (p.nome||"").toLowerCase().includes(busca) &&
+  (!categoria||p.categoria===categoria)
+ );
+ if(!filtrados.length){
+  lista.innerHTML='<div class="empty">Nenhum produto encontrado.</div>';
+  return;
+ }
+ lista.innerHTML=filtrados.map(p=>`
+  <article class="product">
+   <img src="${escapar(p.imagem||"https://placehold.co/500x500/f8f4ee/382820?text=Mellara+Essence")}" alt="${escapar(p.nome)}" onerror="this.src='https://placehold.co/500x500/f8f4ee/382820?text=Mellara+Essence'">
+   <div class="product-info">
+    <span class="product-category">${escapar(p.categoria||"Produtos")}</span>
+    <h3>${escapar(p.nome)}</h3>
+    <p>${escapar(p.descricao||"")}</p>
+    ${Number(p.preco)>0?`<div class="price">R$ ${moeda(p.preco)}</div>`:""}
+    <button onclick="adicionarCarrinho('${escapar(p.id)}')">Adicionar à sacola</button>
+    ${p.link?`<a class="buy-link" href="${escapar(p.link)}" target="_blank" rel="noopener">Comprar produto</a>`:""}
+   </div>
+  </article>
+ `).join("");
+}
+function salvarCarrinho(){
+ localStorage.setItem(CHAVE_CARRINHO,JSON.stringify(carrinho));
+}
+function adicionarCarrinho(id){
+ const p=produtos.find(x=>String(x.id)===String(id));
+ if(!p)return;
+ const item=carrinho.find(x=>String(x.id)===String(id));
+ if(item)item.quantidade++;
+ else carrinho.push({id:p.id,nome:p.nome,preco:Number(p.preco)||0,quantidade:1});
+ salvarCarrinho();
+ atualizarCarrinho();
+ alert("Produto adicionado à sacola!");
+}
+function abrirCarrinho(){
+ const painel=document.getElementById("cartPanel");
+ painel.style.display=painel.style.display==="block"?"none":"block";
+ atualizarCarrinho();
+}
+function removerCarrinho(id){
+ carrinho=carrinho.filter(p=>String(p.id)!==String(id));
+ salvarCarrinho();
+ atualizarCarrinho();
+}
+function atualizarCarrinho(){
+ document.getElementById("cartCount").textContent=carrinho.reduce((s,p)=>s+p.quantidade,0);
+ document.getElementById("cartItems").innerHTML=carrinho.length?
+  carrinho.map(p=>`<div class="cart-item">${escapar(p.nome)} × ${p.quantidade}<button onclick="removerCarrinho('${escapar(p.id)}')">Remover</button></div>`).join(""):
+  "<p>Sua sacola está vazia.</p>";
+ const total=carrinho.reduce((s,p)=>s+(Number(p.preco)||0)*p.quantidade,0);
+ document.getElementById("cartTotal").textContent=moeda(total);
+}
+function finalizarCompra(){
+ if(!carrinho.length){alert("Sua sacola está vazia.");return}
+ let mensagem="Olá! Gostaria de fazer um pedido na Mellara Essence:\n\n";
+ carrinho.forEach(p=>mensagem+=`${p.nome} - Quantidade: ${p.quantidade}\n`);
+ mensagem+="\nTotal: R$ "+moeda(carrinho.reduce((s,p)=>s+(Number(p.preco)||0)*p.quantidade,0));
+ window.open("https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(mensagem),"_blank");
+}
+function mostrarPromocao(){
+ const texto=localStorage.getItem("mellaraPromo");
+ const elemento=document.getElementById("promo");
+ elemento.textContent=texto||"";
+ elemento.style.display=texto?"block":"none";
+}
+document.getElementById("busca").addEventListener("input",renderizarProdutos);
+document.getElementById("categoria").addEventListener("change",renderizarProdutos);
+window.addEventListener("storage",e=>{
+ if([CHAVE_PRODUTOS,"mellaraPromo"].includes(e.key)){
+  renderizarProdutos();
+  mostrarPromocao();
+ }
+ if(e.key===CHAVE_CARRINHO){
+  carrinho=carregarCarrinho();
+  atualizarCarrinho();
+ }
+});
+renderizarProdutos();
+mostrarPromocao();
+atualizarCarrinho();
+</script>
+</body>
+</html>
